@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 #include "../../includes/packet.h"
 #include "../../includes/socket.h"
 #include "../../includes/protocol.h"
-=======
-#include "../../packet.h"
-#include "../../includes/socket.h"
->>>>>>> 149558a22e91ad78bd71721a7a1e36288db8f100
 
 /**
  * The Transport interface handles sockets and is a layer of abstraction
@@ -30,11 +25,7 @@ interface Transport{
     *    associated with a socket. If you are unable to allocated
     *    a socket then return a NULL socket_t.
     */
-<<<<<<< HEAD
    command socket_fd_t socket();
-=======
-   command socket_t socket();
->>>>>>> 149558a22e91ad78bd71721a7a1e36288db8f100
 
    /**
     * Bind a socket with an address.
@@ -48,11 +39,7 @@ interface Transport{
     * @return error_t - SUCCESS if you were able to bind this socket, FAIL
     *       if you were unable to bind.
     */
-<<<<<<< HEAD
    command error_t bind(socket_fd_t fd, socket_addr_t *addr);
-=======
-   command error_t bind(socket_t fd, socket_addr_t *addr);
->>>>>>> 149558a22e91ad78bd71721a7a1e36288db8f100
 
    /**
     * Checks to see if there are socket connections to connect to and
@@ -124,11 +111,7 @@ interface Transport{
     * @return socket_t - returns SUCCESS if you are able to attempt
     *    a connection with the fd passed, else return FAIL.
     */
-<<<<<<< HEAD
    command error_t connect(socket_t fd);
-=======
-   command error_t connect(socket_t fd, socket_addr_t * addr);
->>>>>>> 149558a22e91ad78bd71721a7a1e36288db8f100
 
    /**
     * Closes the socket.
@@ -139,7 +122,7 @@ interface Transport{
     * @return socket_t - returns SUCCESS if you are able to attempt
     *    a closure with the fd passed, else return FAIL.
     */
-   command error_t close(socket_t fd);
+   command error_t close(socket_fd_t fd);
 
    /**
     * A hard close, which is not graceful. This portion is optional.
@@ -150,11 +133,7 @@ interface Transport{
     * @return socket_t - returns SUCCESS if you are able to attempt
     *    a closure with the fd passed, else return FAIL.
     */
-<<<<<<< HEAD
    command error_t release(socket_fd_t fd);
-=======
-   command error_t release(socket_t fd);
->>>>>>> 149558a22e91ad78bd71721a7a1e36288db8f100
 
    /**
     * Listen to the socket and wait for a connection.
@@ -165,7 +144,6 @@ interface Transport{
     * @return error_t - returns SUCCESS if you are able change the state 
     *   to listen else FAIL.
     */
-<<<<<<< HEAD
    command error_t listen(socket_fd_t fd);
 
    command void setTestServer();
@@ -173,7 +151,4 @@ interface Transport{
    command void setTestClient();
 
    command void makePack(pack *Package, uint16_t src, uint16_t dest, uint16_t TTL, uint16_t Protocol, uint16_t seq, uint8_t *payload, uint8_t length);
-=======
-   command error_t listen(socket_t fd);
->>>>>>> 149558a22e91ad78bd71721a7a1e36288db8f100
 }

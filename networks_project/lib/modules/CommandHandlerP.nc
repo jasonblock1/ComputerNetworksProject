@@ -74,11 +74,7 @@ implementation{
                 break;
 
             case CMD_TEST_SERVER:
-<<<<<<< HEAD
                 dbg(COMMAND_CHANNEL, "Command Type: Server\n");
-=======
-                dbg(COMMAND_CHANNEL, "Command Type: Client\n");
->>>>>>> 149558a22e91ad78bd71721a7a1e36288db8f100
                 signal CommandHandler.setTestServer();
                 break;
 

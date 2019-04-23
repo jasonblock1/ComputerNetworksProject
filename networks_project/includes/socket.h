@@ -1,7 +1,6 @@
 #ifndef __SOCKET_H__
 #define __SOCKET_H__
 
-<<<<<<< HEAD
 #define CLOSED 0
 #define FIN_WAIT 1
 #define TIME_WAIT 2
@@ -10,8 +9,6 @@
 #define SYN_SENT 5
 #define SYN_RCVD 6
 
-=======
->>>>>>> 149558a22e91ad78bd71721a7a1e36288db8f100
 enum{
     MAX_NUM_OF_SOCKETS = 10,
     ROOT_SOCKET_ADDR = 255,
@@ -19,24 +16,15 @@ enum{
     SOCKET_BUFFER_SIZE = 128,
 };
 
-<<<<<<< HEAD
 /*enum socket_state{
     CLOSED,
     FIN_WAIT,
     TIME_WAIT,
-=======
-enum socket_state{
-    CLOSED,
->>>>>>> 149558a22e91ad78bd71721a7a1e36288db8f100
     LISTEN,
     ESTABLISHED,
     SYN_SENT,
     SYN_RCVD,
-<<<<<<< HEAD
 };*/
-=======
-};
->>>>>>> 149558a22e91ad78bd71721a7a1e36288db8f100
 
 
 typedef nx_uint8_t nx_socket_port_t;
@@ -50,7 +38,6 @@ typedef nx_struct socket_addr_t{
 
 
 // File descripter id. Each id is associated with a socket_store_t
-<<<<<<< HEAD
 typedef uint8_t socket_fd_t;
 
 // State of a socket. 
@@ -60,15 +47,6 @@ typedef struct socket_t{
     //enum socket_state state;
     uint8_t state;
     socket_addr_t src;
-=======
-typedef uint8_t socket_t;
-
-// State of a socket. 
-typedef struct socket_store_t{
-    uint8_t flag;
-    enum socket_state state;
-    socket_port_t src;
->>>>>>> 149558a22e91ad78bd71721a7a1e36288db8f100
     socket_addr_t dest;
 
     // This is the sender portion.
@@ -81,19 +59,12 @@ typedef struct socket_store_t{
     uint8_t rcvdBuff[SOCKET_BUFFER_SIZE];
     uint8_t lastRead;
     uint8_t lastRcvd;
-<<<<<<< HEAD
     uint8_t largestAcceptable;
-=======
->>>>>>> 149558a22e91ad78bd71721a7a1e36288db8f100
     uint8_t nextExpected;
 
     uint16_t RTT;
     uint8_t effectiveWindow;
-<<<<<<< HEAD
     uint8_t transfer;
 }socket_t;
-=======
-}socket_store_t;
->>>>>>> 149558a22e91ad78bd71721a7a1e36288db8f100
 
 #endif
